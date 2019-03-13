@@ -30,3 +30,7 @@ Use with template and reactive forms like that:
 ## Demo
 
 https://stackblitz.com/edit/angular2-contenteditable-value-accessor
+
+## Maintain
+
+See [MAINTAIN.md](MAINTAIN.md)
