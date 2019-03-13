@@ -1,6 +1,6 @@
 {
     "name": "@tinkoff/angular-contenteditable-accessor",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "peerDependencies": {
         "@angular/core": ">=4.0.0",
         "@angular/forms": ">=4.0.0"
