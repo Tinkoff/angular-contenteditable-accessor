@@ -5,13 +5,13 @@ const INDENTATION = 4;
 
 removeDependencies();
 
+// Remove unnecessary auto added dependency:
 // https://github.com/ng-packagr/ng-packagr/issues/1159
 function removeDependencies() {
 	if (!fs.existsSync(DIST_LIB_PATH)) {
 		return;
 	}
 
-	// Sync dist package.json
 	fs.writeFileSync(DIST_PACKAGE_PATH,
 		JSON.stringify(
 			{

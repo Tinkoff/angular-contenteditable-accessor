@@ -4,5 +4,20 @@
     "peerDependencies": {
         "@angular/core": ">=4.0.0",
         "@angular/forms": ">=4.0.0"
-    }
+    },
+    "description": "This is a ControlValueAccessor for using Angular forms with contenteditable elements",
+    "keywords": [
+        "angular",
+        "contenteditable",
+        "form",
+        "ControlValueAccessor",
+        "ngmodel",
+        "formControl",
+        "control"
+    ],
+    "license": "Apache-2.0",
+    "author": "Alex Inkin <a.inkin@tinkoff.ru>",
+    "repository": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor",
+    "bugs": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor/issues",
+    "homepage": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor#README"
 }

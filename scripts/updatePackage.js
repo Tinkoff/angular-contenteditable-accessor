@@ -13,10 +13,10 @@ const {
 const LIB_PACKAGE_PATH = 'projects/angular-contenteditable-accessor/package.json';
 const INDENTATION = 4;
 
+// Sync library package.json metadata with main package.json
 updatePackage();
 
 function updatePackage() {
-	// Sync lib package.json
 	fs.writeFileSync(LIB_PACKAGE_PATH,
 		JSON.stringify(
 			{
