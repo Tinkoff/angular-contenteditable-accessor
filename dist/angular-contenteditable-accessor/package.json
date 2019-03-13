@@ -1,0 +1,33 @@
+{
+    "name": "@tinkoff/angular-contenteditable-accessor",
+    "version": "1.0.0",
+    "peerDependencies": {
+        "@angular/core": ">=4.0.0",
+        "@angular/forms": ">=4.0.0"
+    },
+    "main": "bundles/tinkoff-angular-contenteditable-accessor.umd.js",
+    "module": "fesm5/tinkoff-angular-contenteditable-accessor.js",
+    "es2015": "fesm2015/tinkoff-angular-contenteditable-accessor.js",
+    "esm5": "esm5/tinkoff-angular-contenteditable-accessor.js",
+    "esm2015": "esm2015/tinkoff-angular-contenteditable-accessor.js",
+    "fesm5": "fesm5/tinkoff-angular-contenteditable-accessor.js",
+    "fesm2015": "fesm2015/tinkoff-angular-contenteditable-accessor.js",
+    "typings": "tinkoff-angular-contenteditable-accessor.d.ts",
+    "metadata": "tinkoff-angular-contenteditable-accessor.metadata.json",
+    "sideEffects": false,
+    "description": "This is a ControlValueAccessor for using Angular forms with contenteditable elements",
+    "keywords": [
+        "angular",
+        "contenteditable",
+        "form",
+        "ControlValueAccessor",
+        "ngmodel",
+        "formControl",
+        "control"
+    ],
+    "license": "Apache-2.0",
+    "author": "Alex Inkin <a.inkin@tinkoff.ru>",
+    "repository": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor",
+    "bugs": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor/issues",
+    "homepage": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor#README"
+}

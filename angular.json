@@ -1,0 +1,117 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "angular-contenteditable-accessor": {
+            "root": "projects/angular-contenteditable-accessor",
+            "sourceRoot": "projects/angular-contenteditable-accessor/src",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "projects/angular-contenteditable-accessor/tsconfig.lib.json",
+                        "project": "projects/angular-contenteditable-accessor/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "optimization": true
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/angular-contenteditable-accessor/src/test.ts",
+                        "tsConfig": "projects/angular-contenteditable-accessor/tsconfig.spec.json",
+                        "karmaConfig": "projects/angular-contenteditable-accessor/karma.conf.js",
+                        "watch": false
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/angular-contenteditable-accessor/tsconfig.lib.json",
+                            "projects/angular-contenteditable-accessor/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
+        },
+        "demo": {
+            "root": "projects/demo/",
+            "sourceRoot": "projects/demo/src",
+            "projectType": "application",
+            "prefix": "app",
+            "schematics": {},
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/demo",
+                        "index": "projects/demo/src/index.html",
+                        "main": "projects/demo/src/main.ts",
+                        "polyfills": "projects/demo/src/polyfills.ts",
+                        "tsConfig": "projects/demo/tsconfig.app.json",
+                        "assets": [
+                            "projects/demo/src/favicon.ico",
+                            "projects/demo/src/assets"
+                        ],
+                        "styles": ["projects/demo/src/styles.css"],
+                        "scripts": [],
+                        "es5BrowserSupport": true
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "projects/demo/src/environments/environment.ts",
+                                    "with": "projects/demo/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "demo:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "demo:build:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": ["projects/demo/tsconfig.app.json"],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "angular-contenteditable-accessor"
+}
