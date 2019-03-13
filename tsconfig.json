@@ -9,6 +9,7 @@
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+		"importHelpers": true,
         "strict": true,
         "noFallthroughCasesInSwitch": true,
         "noUnusedLocals": true,
@@ -19,7 +20,7 @@
         "lib": ["es2018", "dom"],
         "paths": {
             "@tinkoff/angular-contenteditable-accessor": [
-                "dist/angular-contenteditable-accessor"
+                "projects/angular-contenteditable-accessor/src/public_api"
             ]
         }
     }
