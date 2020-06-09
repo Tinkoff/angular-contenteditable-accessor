@@ -154,6 +154,6 @@ export class ContenteditableValueAccessor
     private static processValue(value: string | null): string {
         const processed = value || '';
 
-        return processed.trim() === '<br>' ? '' : processed;
+        return processed.toString().trim() === '<br>' ? '' : processed;
     }
 }
