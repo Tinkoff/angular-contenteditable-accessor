@@ -5,11 +5,6 @@ All notable changes to this project will be documented in this file. See [standa
 ## [1.2.0](https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor/compare/v1.1.0...v1.2.0) (2021-07-27)
 
 
-### Features
-
-* **docs:** since fury doesn't have a proper cache ([4ca348c](https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor/commit/4ca348ca1c5b6e83ccef2eca6ec9923231769ad2))
-
-
 ### Bug Fixes
 
 * **directive:** fix for non-string values ([38ac555](https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor/commit/38ac5555dbadbb1d432840301b7593a72f2c4f52))
