@@ -147,13 +147,12 @@ export class ContenteditableValueAccessor
     }
 
     /*
-     * null and other falsy control values are treated as empty string to
-     * prevent IE11 outputting 'null', also single <br> is replaced with empty
-     * string when passed to the control
+     * null is treated as empty string to prevent IE11 outputting 'null',
+     * also single <br> is replaced with empty string when passed to the control
      */
-    private static processValue(value: string | null): string {
-        const processed = value || '';
+    private static processValue(value: unknown): string {
+        const processed = String(value == null ? '' : value);
 
-        return processed.toString().trim() === '<br>' ? '' : processed;
+        return processed.trim() === '<br>' ? '' : processed;
     }
 }
