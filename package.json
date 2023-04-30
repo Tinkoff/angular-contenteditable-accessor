@@ -60,7 +60,7 @@
     "devDependencies": {
         "@angular-devkit/build-angular": "0.13.0",
         "@angular-devkit/build-ng-packagr": "0.13.0",
-        "@angular/cli": "7.3.4",
+        "@angular/cli": "15.2.7",
         "@angular/compiler-cli": "7.2.0",
         "@angular/language-service": "7.2.0",
         "@tinkoff/linters": "^0.3.0",
