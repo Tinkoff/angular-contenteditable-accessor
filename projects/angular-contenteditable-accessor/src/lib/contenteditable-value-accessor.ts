@@ -151,7 +151,7 @@ export class ContenteditableValueAccessor
      * also single <br> is replaced with empty string when passed to the control
      */
     private static processValue(value: unknown): string {
-        const processed = String(value == null ? '' : value);
+        const processed = String(value === null || value === undefined ? '' : value);
 
         return processed.trim() === '<br>' ? '' : processed;
     }

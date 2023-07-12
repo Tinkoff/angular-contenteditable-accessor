@@ -14,13 +14,13 @@ describe('ContenteditableValueAccessor', () => {
         `,
     })
     class TestComponent {
-        @ViewChild('modelEl', {read: ElementRef})
+        @ViewChild('modelEl',  { read: ElementRef, static: true })
         readonly modelElementRef?: ElementRef<HTMLElement>;
 
-        @ViewChild('controlEl', {read: ElementRef})
+        @ViewChild('controlEl',  { read: ElementRef, static: true})
         readonly controlElementRef?: ElementRef<HTMLElement>;
 
-        @ViewChild('nameEl', {read: ElementRef})
+        @ViewChild('nameEl', { read: ElementRef, static: true })
         readonly nameElementRef?: ElementRef<HTMLElement>;
 
         disabled = false;
