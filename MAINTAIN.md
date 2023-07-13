@@ -18,4 +18,5 @@ to push new tag to the repository and then do
 cd ./dist/angular-contenteditable-accessor
 npm publish --access=public
 ```
+
 to publish new version to `npm`.

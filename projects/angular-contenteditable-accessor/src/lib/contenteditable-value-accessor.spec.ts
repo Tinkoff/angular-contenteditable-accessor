@@ -1,26 +1,40 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {Component, ElementRef, ViewChild} from '@angular/core';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import {ContenteditableValueAccessorModule} from './module';
 
 describe('ContenteditableValueAccessor', () => {
     @Component({
         template: `
-            <div #modelEl contenteditable [(ngModel)]="model" [disabled]="disabled"></div>
-            <div #controlEl contenteditable [formControl]="control"></div>
+            <div
+                #modelEl
+                contenteditable
+                [disabled]="disabled"
+                [(ngModel)]="model"
+            ></div>
+            <div
+                #controlEl
+                contenteditable
+                [formControl]="control"
+            ></div>
             <form [formGroup]="group">
-                <div #nameEl contenteditable formControlName="control"></div>
+                <div
+                    #nameEl
+                    contenteditable
+                    formControlName="control"
+                ></div>
             </form>
         `,
     })
     class TestComponent {
-        @ViewChild('modelEl', {read: ElementRef})
+        @ViewChild('modelEl', {read: ElementRef, static: true})
         readonly modelElementRef?: ElementRef<HTMLElement>;
 
-        @ViewChild('controlEl', {read: ElementRef})
+        @ViewChild('controlEl', {read: ElementRef, static: true})
         readonly controlElementRef?: ElementRef<HTMLElement>;
 
-        @ViewChild('nameEl', {read: ElementRef})
+        @ViewChild('nameEl', {read: ElementRef, static: true})
         readonly nameElementRef?: ElementRef<HTMLElement>;
 
         disabled = false;
@@ -230,10 +244,7 @@ describe('ContenteditableValueAccessor', () => {
 
         fixture.whenStable().then(() => {
             modelEl().focus();
-            document
-                .getSelection()!
-                .getRangeAt(0)
-                .selectNode(modelEl().firstChild!);
+            document.getSelection()!.getRangeAt(0).selectNode(modelEl().firstChild!);
             document.execCommand('delete');
 
             expect(modelEl().innerHTML).toBe('<br>');

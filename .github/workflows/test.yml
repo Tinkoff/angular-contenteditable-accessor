@@ -1,0 +1,23 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  tests:
+    if: ${{ !contains(github.head_ref, 'release/') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js and Cache
+        uses: ./.github/actions/nodejs
+
+      - name: Run tests
+        run: npm run test
+
+concurrency:
+  group: test-${{ github.head_ref }}
+  cancel-in-progress: true

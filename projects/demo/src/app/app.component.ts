@@ -23,15 +23,15 @@ export class AppComponent {
         this.group.disable();
     }
 
-    onToggleModelDisabled() {
+    onToggleModelDisabled(): void {
         this.disabled = !this.disabled;
     }
 
-    onModelSetValue() {
+    onModelSetValue(): void {
         this.model = html;
     }
 
-    onToggleControlDisabled() {
+    onToggleControlDisabled(): void {
         if (this.control.disabled) {
             this.control.enable();
         } else {
@@ -39,11 +39,11 @@ export class AppComponent {
         }
     }
 
-    onControlSetValue() {
+    onControlSetValue(): void {
         this.control.setValue(html);
     }
 
-    onToggleNameDisabled() {
+    onToggleNameDisabled(): void {
         if (this.group.disabled) {
             this.group.enable();
         } else {
@@ -51,7 +51,7 @@ export class AppComponent {
         }
     }
 
-    onNameSetValue() {
+    onNameSetValue(): void {
         this.group.patchValue({
             control: html,
         });
