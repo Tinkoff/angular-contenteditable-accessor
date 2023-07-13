@@ -2,28 +2,25 @@
     "compileOnSave": false,
     "compilerOptions": {
         "baseUrl": "./",
-    "downlevelIteration": true,
+        "downlevelIteration": true,
         "outDir": "./dist/out-tsc",
         "sourceMap": true,
         "declaration": false,
         "module": "es2020",
         "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-		"importHelpers": true,
+        "importHelpers": true,
         "strict": true,
         "noFallthroughCasesInSwitch": true,
         "noUnusedLocals": true,
         "noImplicitReturns": true,
         "noUnusedParameters": true,
         "target": "es2015",
-		"skipLibCheck": true,
+        "skipLibCheck": true,
         "typeRoots": ["node_modules/@types"],
         "lib": ["es2018", "dom"],
         "paths": {
-            "@tinkoff/angular-contenteditable-accessor": [
-                "projects/angular-contenteditable-accessor/src/public_api"
-            ]
+            "@tinkoff/angular-contenteditable-accessor": ["projects/angular-contenteditable-accessor/src/public_api"]
         }
     }
 }

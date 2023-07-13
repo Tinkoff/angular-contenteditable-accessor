@@ -1,4 +1,5 @@
 import {NgModule} from '@angular/core';
+
 import {ContenteditableValueAccessor} from './contenteditable-value-accessor';
 
 @NgModule({

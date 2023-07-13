@@ -7,7 +7,7 @@ const DIST_README_PATH = DIST_LIB_PATH + README_PATH;
 copyReadme();
 
 function copyReadme() {
-	if (fs.existsSync(README_PATH)) {
-		fs.copyFile(README_PATH, DIST_README_PATH, () => {});
-	}
+    if (fs.existsSync(README_PATH)) {
+        fs.copyFile(README_PATH, DIST_README_PATH, () => {});
+    }
 }

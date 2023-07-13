@@ -17,9 +17,9 @@
                     },
                     "configurations": {
                         "production": {
-                            "optimization": true
-                        ,              "tsConfig": "projects/angular-contenteditable-accessor/tsconfig.lib.prod.json"
-}
+                            "optimization": true,
+                            "tsConfig": "projects/angular-contenteditable-accessor/tsconfig.lib.prod.json"
+                        }
                     }
                 },
                 "test": {
@@ -53,20 +53,20 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "aot": true,
                         "outputPath": "dist/demo",
                         "index": "projects/demo/src/index.html",
                         "main": "projects/demo/src/main.ts",
                         "polyfills": "projects/demo/src/polyfills.ts",
                         "tsConfig": "projects/demo/tsconfig.app.json",
-                        "assets": [
-                            "projects/demo/src/favicon.ico",
-                            "projects/demo/src/assets"
-                        ],
-                        "styles": [
-                            "projects/demo/src/styles.css"
-                        ],
-                        "scripts": []
+                        "assets": ["projects/demo/src/favicon.ico", "projects/demo/src/assets"],
+                        "styles": ["projects/demo/src/styles.css"],
+                        "scripts": [],
+                        "vendorChunk": true,
+                        "extractLicenses": false,
+                        "buildOptimizer": false,
+                        "sourceMap": true,
+                        "optimization": false,
+                        "namedChunks": true
                     },
                     "configurations": {
                         "production": {
@@ -80,7 +80,6 @@
                             "outputHashing": "all",
                             "sourceMap": false,
                             "namedChunks": false,
-                            "aot": true,
                             "extractLicenses": true,
                             "vendorChunk": false,
                             "buildOptimizer": true,
@@ -96,7 +95,8 @@
                                 }
                             ]
                         }
-                    }
+                    },
+                    "defaultConfiguration": ""
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",

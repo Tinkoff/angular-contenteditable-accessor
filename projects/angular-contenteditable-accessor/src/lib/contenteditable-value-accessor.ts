@@ -29,14 +29,15 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
     ],
 })
 export class ContenteditableValueAccessor
-    implements ControlValueAccessor, AfterViewInit, OnDestroy {
+    implements ControlValueAccessor, AfterViewInit, OnDestroy
+{
     /*
      * MutationObserver IE11 fallback (as opposed to input event for modern browsers).
      * When mutation removes a tag, i.e. delete is pressed on the last remaining character
      * inside a tag — callback is triggered before the DOM is actually changed, therefore
      * setTimeout is used
      */
-    private observer = new MutationObserver(() => {
+    private readonly observer = new MutationObserver(() => {
         setTimeout(() => {
             this.onChange(
                 ContenteditableValueAccessor.processValue(
@@ -49,7 +50,7 @@ export class ContenteditableValueAccessor
     /*
      * onTouch callback that marks control as touched and allows FormHooks use
      */
-    private onTouched = () => {};
+    private onTouched = (): void => {};
 
     /*
      * onChange callback that writes value to control and allows FormHooks use
@@ -64,7 +65,7 @@ export class ContenteditableValueAccessor
     /*
      * To support IE11 MutationObserver is used to monitor changes to the content
      */
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this.observer.observe(this.elementRef.nativeElement, {
             characterData: true,
             childList: true,
@@ -75,7 +76,7 @@ export class ContenteditableValueAccessor
     /*
      * Disconnect MutationObserver IE11 fallback on destroy
      */
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this.observer.disconnect();
     }
 
@@ -85,7 +86,7 @@ export class ContenteditableValueAccessor
      * event works in current browser
      */
     @HostListener('input')
-    onInput() {
+    onInput(): void {
         this.observer.disconnect();
         this.onChange(
             ContenteditableValueAccessor.processValue(
@@ -98,7 +99,7 @@ export class ContenteditableValueAccessor
      * Listen to blur event to mark control as touched
      */
     @HostListener('blur')
-    onBlur() {
+    onBlur(): void {
         this.onTouched();
     }
 
@@ -107,7 +108,7 @@ export class ContenteditableValueAccessor
      *
      * @see {@link ControlValueAccessor#writeValue}
      */
-    writeValue(value: string | null) {
+    writeValue(value: string | null): void {
         this.renderer.setProperty(
             this.elementRef.nativeElement,
             'innerHTML',
@@ -120,7 +121,7 @@ export class ContenteditableValueAccessor
      *
      * @see {@link ControlValueAccessor#registerOnChange}
      */
-    registerOnChange(onChange: (value: string) => void) {
+    registerOnChange(onChange: (value: string) => void): void {
         this.onChange = onChange;
     }
 
@@ -129,7 +130,7 @@ export class ContenteditableValueAccessor
      *
      * @see {@link ControlValueAccessor#registerOnTouched}
      */
-    registerOnTouched(onTouched: () => void) {
+    registerOnTouched(onTouched: () => void): void {
         this.onTouched = onTouched;
     }
 
@@ -138,7 +139,7 @@ export class ContenteditableValueAccessor
      *
      * @see {@link ControlValueAccessor#setDisabledState}
      */
-    setDisabledState(disabled: boolean) {
+    setDisabledState(disabled: boolean): void {
         this.renderer.setAttribute(
             this.elementRef.nativeElement,
             'contenteditable',

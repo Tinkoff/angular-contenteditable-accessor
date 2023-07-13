@@ -8,24 +8,23 @@ removeDependencies();
 // Remove unnecessary auto added dependency:
 // https://github.com/ng-packagr/ng-packagr/issues/1159
 function removeDependencies() {
-	if (!fs.existsSync(DIST_LIB_PATH)) {
-		return;
-	}
+    if (!fs.existsSync(DIST_LIB_PATH)) {
+        return;
+    }
 
-	fs.writeFileSync(DIST_PACKAGE_PATH,
-		JSON.stringify(
-			{
-				...getPackage(DIST_PACKAGE_PATH),
-				dependencies: undefined,
-			},
-			null,
-			INDENTATION,
-		),
-	);
+    fs.writeFileSync(
+        DIST_PACKAGE_PATH,
+        JSON.stringify(
+            {
+                ...getPackage(DIST_PACKAGE_PATH),
+                dependencies: undefined,
+            },
+            null,
+            INDENTATION,
+        ),
+    );
 }
 
 function getPackage(packagePath) {
-	return fs.existsSync(packagePath)
-		? JSON.parse(fs.readFileSync(packagePath))
-		: {};
+    return fs.existsSync(packagePath) ? JSON.parse(fs.readFileSync(packagePath)) : {};
 }
