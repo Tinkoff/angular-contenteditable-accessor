@@ -19,5 +19,8 @@
     "author": "Alex Inkin <a.inkin@tinkoff.ru>",
     "repository": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor",
     "bugs": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor/issues",
+    "dependencies": {
+      "tslib": "^2.0.0"
+    },
     "homepage": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor#README"
 }

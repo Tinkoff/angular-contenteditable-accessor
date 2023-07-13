@@ -53,7 +53,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-            "aot": true,
+                        "aot": true,
                         "outputPath": "dist/demo",
                         "index": "projects/demo/src/index.html",
                         "main": "projects/demo/src/main.ts",
@@ -63,9 +63,10 @@
                             "projects/demo/src/favicon.ico",
                             "projects/demo/src/assets"
                         ],
-                        "styles": ["projects/demo/src/styles.css"],
-                        "scripts": [],
-                        "es5BrowserSupport": true
+                        "styles": [
+                            "projects/demo/src/styles.css"
+                        ],
+                        "scripts": []
                     },
                     "configurations": {
                         "production": {
