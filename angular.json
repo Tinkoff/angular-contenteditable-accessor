@@ -18,7 +18,8 @@
                     "configurations": {
                         "production": {
                             "optimization": true
-                        }
+                        ,              "tsConfig": "projects/angular-contenteditable-accessor/tsconfig.lib.prod.json"
+}
                     }
                 },
                 "test": {
@@ -52,6 +53,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
+            "aot": true,
                         "outputPath": "dist/demo",
                         "index": "projects/demo/src/index.html",
                         "main": "projects/demo/src/main.ts",
@@ -87,7 +89,11 @@
                                     "type": "initial",
                                     "maximumWarning": "2mb",
                                     "maximumError": "5mb"
-                                }
+                                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
                             ]
                         }
                     }
